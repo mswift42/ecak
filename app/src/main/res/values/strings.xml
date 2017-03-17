@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EggCrackin</string>
+    <string name="recipe_ingredients_title">Ingredients:</string>
 </resources>
