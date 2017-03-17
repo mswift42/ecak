@@ -67,7 +67,7 @@ val MockRecipeData: List<Recipe> = listOf(
                         "1/4 teaspoon ginger",
                         "1/8 teaspoon cloves",
                         "1/8 teaspoon nutmeg",
-                        "2 tablespoons browhn sugar",
+                        "2 tablespoons brown sugar",
                         "8 slices of bread"
                 )
         ),
