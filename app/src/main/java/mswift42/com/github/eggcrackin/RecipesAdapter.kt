@@ -27,6 +27,10 @@ class RecipesAdapter(val Recipes : MutableList<Recipe>, val itemClick: (Recipe) 
 
         fun bindRecipe(recipe: Recipe) {
             with(recipe) {
+                itemView.ec_recipe_title.text = title
+                itemView.ec_recipe_image.setImageResource(image_url)
+                itemView.ec_recipe_publisher.text = publisher
+
 
             }
         }
