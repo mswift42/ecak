@@ -8,7 +8,7 @@ object SpanUtility {
     fun calculateNoOfColumns(context: Context): Int {
         val displayMetrics = context.resources.displayMetrics
         val dpWidth = displayMetrics.widthPixels / displayMetrics.density
-        val columns = (dpWidth / 140).toInt()
+        val columns = (dpWidth / 300).toInt()
         return columns
     }
 }
