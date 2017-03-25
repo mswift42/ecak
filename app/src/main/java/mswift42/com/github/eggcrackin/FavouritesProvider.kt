@@ -1,6 +1,21 @@
 package mswift42.com.github.eggcrackin
 
-object FavouritesProvider {
+import android.annotation.SuppressLint
+import android.os.Parcel
+import android.os.Parcelable
+
+
+@SuppressLint("ParcelCreator")
+object FavouritesProvider : Parcelable{
+    override fun writeToParcel(dest: Parcel?, flags: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun describeContents(): Int {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+
     var favourites = HashSet<Recipe>()
 
     fun getFavourites(): List<Recipe> {
