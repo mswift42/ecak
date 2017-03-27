@@ -11,10 +11,7 @@ object FavouritesProvider : Parcelable {
         dest?.writeList(getFavourites().toList())
     }
 
-    override fun describeContents(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
+    override fun describeContents() = 0
 
     var favourites = HashSet<Recipe>()
 
