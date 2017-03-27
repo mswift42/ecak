@@ -17,4 +17,18 @@ class MainActivity : AppCompatActivity() {
         val adapter = RecipesAdapter(MockRecipeData.mockRecipeData)
         ec_recyclerview.adapter = adapter
     }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        outState?.putParcelable("favourites", FavouritesProvider)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val fav = savedInstanceState?.getParcelable<FavouritesProvider>("favourites")
+        if (fav != null) {
+            FavouritesProvider.setFavourites(fav?.getFavourites())
+        }
+    }
+
 }
