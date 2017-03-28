@@ -9,6 +9,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        try {
+            FavouritesProvider.setFavouritesFromJson(
+                    FileUtility.restoreFromFile(this)
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
         setContentView(R.layout.activity_main)
         val layoutManager = GridLayoutManager(this, SpanUtility.calculateNoOfColumns(this))
         ec_recyclerview.layoutManager = layoutManager
@@ -29,4 +36,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        FileUtility.writeToFile(this, FavouritesProvider.toJson())
+    }
 }
