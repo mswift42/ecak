@@ -3,6 +3,7 @@ package mswift42.com.github.eggcrackin
 import android.annotation.SuppressLint
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.Gson
 
 
 @SuppressLint("ParcelCreator")
@@ -34,4 +35,18 @@ object FavouritesProvider : Parcelable {
     fun isFavourite(recipe: Recipe) : Boolean {
         return favourites.contains(recipe)
     }
+
+    fun toJson() : String {
+        val gson = Gson()
+        return gson.toJson(this)
+    }
+
+    fun setFavouritesFromJson(json: String) {
+        val gson  = Gson()
+        val fav = gson.fromJson<mswift42.com.github.eggcrackin.FavouritesProvider>(json,
+                mswift42.com.github.eggcrackin.FavouritesProvider::class.java!!)
+        setFavourites(fav.getFavourites())
+    }
+
+
 }
